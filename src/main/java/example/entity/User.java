@@ -1,6 +1,7 @@
 package example.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import example.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -41,6 +42,9 @@ public class User implements Serializable {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "role")
+    private Role role;
 
     @Column(name = "b_date", updatable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
